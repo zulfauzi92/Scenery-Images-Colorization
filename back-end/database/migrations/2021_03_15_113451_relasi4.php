@@ -13,16 +13,13 @@ class Relasi4 extends Migration
      */
     public function up()
     {
-        Schema::table('my_office', function (Blueprint $table) {
-            $table->integer('kos_id')->unsigned()->change();
-            $table->foreign('kos_id')->references('id')->on('kos')
-                ->onUpdate('cascade')->onDelete('cascade');
+        // Schema::table('my_office', function (Blueprint $table) {
+        //     $table->integer('kos_id')->unsigned()->change();
+        //     $table->foreign('kos_id')->references('id')->on('kos')
+        //         ->onUpdate('cascade')->onDelete('cascade');
 
-            // $table->integer('user_id')->unsigned()->change();
-            // $table->foreign('user_id')->references('id')->on('users')
-            //     ->onUpdate('cascade')->onDelete('cascade');
            
-        });
+        // });
     }
 
     /**

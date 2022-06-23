@@ -10,7 +10,6 @@ class Gallery extends Model
     use HasFactory;
     protected $table = 'galleries';
     protected $fillable = [
-        'kos_id',
         'filename'
     ];
     public $timestamps = true;

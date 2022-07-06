@@ -252,24 +252,6 @@ function Register() {
                 </select>
                 
                 
-                
-              {/* </div> */}
-              {/* <input 
-                class="form-control" 
-                type="text"
-                placeholder="Role"
-                value={role}
-                onChange={(e) => {
-                  setRole(e.target.value);
-                  setErrorRole("");
-                           }}
-              />
-              <i class="ti-user"></i>
-              {errorRole !== "" ? (
-                          <span className="text-danger ml-2">{errorRole}</span>
-                        ) : (
-                          ""
-                        )} */}
             </div>
             
             {/* <div id="pass-info" class="clearfix"></div> */}

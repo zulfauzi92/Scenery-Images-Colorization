@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Panagea - Premium site template for travel agencies, hotels and restaurant listing.">
+    <meta name="author" content="Ansonika">
+
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Main styles -->
+    <link href="assets/admin_section/css/admin.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS-->
+    <link href="assets/admin_section/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icon fonts-->
+    <link href="assets/admin_section/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- BASE CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/vendors.css" rel="stylesheet">
+    
+    <!-- Plugin styles -->
+    <link href="assets/admin_section/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="assets/admin_section/vendor/dropzone.css" rel="stylesheet">
+    <link href="assets/admin_section/css/date_picker.css" rel="stylesheet">
+
+    <!-- WYSIWYG Editor -->
+    <link rel="stylesheet" href="assets/admin_section/js/editor/summernote-bs4.css">
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="assets/css/custom.css" rel="stylesheet">
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    	<!-- COMMON SCRIPTS -->
+      <script src="assets/js/common_scripts.js"></script>
+      <script src="assets/js/main.js"></script>
+      <script src="assets/assets/validate.js"></script>
+      
+      <!-- Map -->
+      <script src="http://maps.googleapis.com/maps/api/js"></script>
+      <script src="assets/js/map_hotels.js"></script>
+      <script src="assets/js/infobox.js"></script>
+      <script src="assets/js/map_single_hotel.js"></script>
+  
+      <!-- DATEPICKER  -->
+      <script>
+        $(function() {
+          'use strict';
+          $('input[name="dates"]').daterangepicker({
+            autoUpdateInput: false,
+            minDate:new Date(),
+            locale: {
+              cancelLabel: 'Clear'
+            }
+          });
+          $('input[name="dates"]').on('apply.daterangepicker', function(ev, picker) {
+            $(this).val(picker.startDate.format('MM-DD-YY') + ' > ' + picker.endDate.format('MM-DD-YY'));
+          });
+          $('input[name="dates"]').on('cancel.daterangepicker', function(ev, picker) {
+            $(this).val('');
+          });
+        });
+        </script>
+        
+        <!-- INPUT QUANTITY  -->
+        <script src="assets/js/input_qty.js"></script>
+
+       	<!-- INSTAGRAM FEED  -->
+        <script>
+          $(window).on('load', function(){
+              "use strict";
+              $.instagramFeed({
+                'username': 'hotelwailea',
+                'container': "#instagram-feed-hotel",
+                'display_profile': false,
+                'display_biography': false,
+                'display_gallery': true,
+                'get_raw_json': false,
+                'callback': null,
+                'styling': true,
+                'items': 12,
+                'items_per_row': 6,
+                'margin': 1 
+              });
+            });
+          </script>
+
+           
+          
+  </body>
+</html>

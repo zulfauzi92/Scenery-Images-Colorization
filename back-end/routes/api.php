@@ -30,7 +30,7 @@ use App\Http\Controllers\MyBookingController;
 //Galery Controller
 Route::group(['prefix' => 'gallery',   ], function() {
     Route::get('/read', [GalleryController::class, 'index']);
-    // Route::post('/create', [GalleryController::class, 'store']);
+    Route::post('/create', [GalleryController::class, 'store']);
     // Route::post('/update/{id}', [GalleryController::class, 'update']);
     // Route::delete('/delete/{id}', [GalleryController::class, 'destroy']);
 });

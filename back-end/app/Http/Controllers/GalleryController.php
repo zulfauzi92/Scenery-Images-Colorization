@@ -33,40 +33,38 @@ class GalleryController extends Controller
 
     }
 
-    // public function store(Request $request)
-    // {
-    //     $user = JWTAuth::parseToken()->authenticate();
+    public function store(Request $request)
+    {
+        // $user = JWTAuth::parseToken()->authenticate();
         
-    //     $request->validate([
-    //         'room_id' => 'required'
-    //     ]);
+        // $request->validate([
+        //     'room_id' => 'required'
+        // ]);
 
-    //     if($request->hasFile('filename')) {
+        if($request->hasFile('filename')) {
             
-    //         $validator = Validator::make($request->all(), [
-    //             'filename' => 'required|image|mimes:png,jpeg,jpg'
-    //         ]);
+            $validator = Validator::make($request->all(), [
+                'filename' => 'required|image|mimes:png,jpeg,jpg'
+            ]);
 
-    //         if($validator->fails()){
-    //             return response()->json(['status' => $validator->errors()->toJson()], 400);
-    //         }
+            if($validator->fails()){
+                return response()->json(['status' => $validator->errors()->toJson()], 400);
+            }
 
-    //         $file = $request->file('filename');
-    //         $filename = 'otakkanan/gallery/' . $user->name . '/' . 'gl-' . time() . '.' . $file->getClientOriginalExtension();
-    //         $file->storeAs('public/', $filename);
+            $file = $request->file('filename');
+            $filename = 'colorization/' . 'up-' . time() . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/', $filename);
 
-    //     }
+        }
 
-    //     $gallery = Gallery::create([
-    //         'room_id' => $request->room_id,
-    //         'user_id' => $user->id,
-    //         'filename' => $filename,
-    //     ]);
+        $gallery = Gallery::create([
+            'filename' => $filename
+        ]);
 
-    //     $status = "Data created succesfully";
+        $status = "Data created succesfully";
 
-    //     return response()->json(compact('gallery', 'status'));
-    // }
+        return response()->json(compact('gallery', 'status'));
+    }
 
     // public function show($id)
     // {

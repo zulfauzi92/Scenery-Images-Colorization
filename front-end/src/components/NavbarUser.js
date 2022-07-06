@@ -22,7 +22,7 @@ function Navbar() {
 
   return (
     <>
-      <header class="header menu">
+      <header class="header menu_fixed">
             {/* <div id="preloader"><div data-loader="circle-side"></div></div> */}
             <div id="logo">
             <Link to="/user">

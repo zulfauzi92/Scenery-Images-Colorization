@@ -49,9 +49,9 @@ function Login() {
            		window.location = "/user";
 			else if(res.data.user.role == "owner")
 				window.location = "/ownersroom";
-          } else {
-            setErrorEmail("You're not and Owner or User");
-          }
+          	} else {
+            	setErrorEmail("You're not and Owner or User");
+          	}
           setLoading(false);
         })
         .catch((err) => {
@@ -91,7 +91,7 @@ function Login() {
 			<div id="login">
 				<aside>
 					<figure>
-						<a href="index.html"><img src="assets/img/otakkananlogo.png" width="160" height="50" data-retina="true" alt="" class="logo_sticky"/></a>
+						<Link to="/"><img src="assets/img/otakkananlogo.png" width="160" height="50" data-retina="true" alt="" class="logo_sticky"/></Link>
 					</figure>
 					<form>
 						<div class="access_social">

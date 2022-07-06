@@ -113,9 +113,9 @@ function Register() {
       <div id="login">
         <aside>
           <figure>
-            <a href="index.html"><img src="assets/img/otakkananlogo.png" width="160" height="50" data-retina="true" alt="" class="logo_sticky"/></a>
+          <Link to="/"><img src="assets/img/otakkananlogo.png" width="160" height="50" data-retina="true" alt="" class="logo_sticky"/></Link>
           </figure>
-          <form onClick={_onSubmit} >
+          <form  >
             <div class="form-group">
               <label>Your Name</label>
               <input 
@@ -237,16 +237,17 @@ function Register() {
               <label>Your Role</label>
               {/* <div class="form-control"> */}
               
-                <select class="form-control">
-                  <option>=== Select Your Role ===</option>
-                  <option value={role} onChange={(e) => {
-                  setRole("user");
-                  setErrorRole("");
-                           }}>User</option>
-                  <option value={role} onChange={(e) => {
-                  setRole("owner");
-                  setErrorRole("");
-                           }}>Owner</option>		
+                <select class="form-control"
+                  value={role} 
+                  onChange={(e) => {
+                      setRole(e.target.value);
+                      setErrorRole("");
+                  }}
+                
+                >
+                  <option value="">=== Select Your Role ===</option>
+                  <option value="user">User</option>
+                  <option value="owner">Owner</option>		
                             
                 </select>
                 

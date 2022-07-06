@@ -1,40 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Navbar from '../components/NavbarOwner';
 import FooterOwner from '../components/FooterOwner';
 import IconButton from '@material-ui/core/IconButton';
 import RemoveIcon from '@material-ui/icons/Remove';
-import AddIcon from '@material-ui/icons/Add';
 import axios from "axios";
-import { CREATE_OFFICE, JWT_HEADER } from "../constants/urls";
+import { JWT_HEADER } from "../constants/urls";
 
 function CreateNewOffice() {
-	
-	
-	
-	
-	
-	// const [errorname, setErrorName] = React.useState("");
-	// const [erroraddress, setErrorAddress] = React.useState("");
-	// const [errordescription, setErrorDescription] = React.useState("");
-	// const [errorlatitude, setErrorLatitude] = React.useState("");
-	// const [errorlongitude, setErrorLongitude] = React.useState("");
-	// const [errorcapacity, setErrorCapacity] = React.useState("");
-	// const [errorlayout, setErrorLayout] = React.useState("");
-	// const [errorroom_type_name, setErrorRoomTypeName] = React.useState("");
-	// const [errorroom_function_name, setErrorRoomFunctionName] = React.useState("");
-	// const [errorfilename, setErrorFilename] = React.useState("");
-	// const [errorfacility_name, setErrorFacilityName] = React.useState("");
-	// const [errorfacility_status, setErrorFacilityStatus] = React.useState("");
-	// const [errorregulation_name, setErrorRegulationName] = React.useState("");
-	// const [errorday, setErrorDay] = React.useState("");
-	// const [erroropen_times, setErrorOpenTimes] = React.useState("");
-	// const [errorclose_times, setErrorCloseTimes] = React.useState("");
-	// const [errorcategory_price_name, setErrorCategoryPriceName] = React.useState("");
-	// const [errorprice, setErrorPrice] = React.useState("");
 
 	const [loading, setLoading] = React.useState(false);
-	const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 	
 
 	const [name, setName] = React.useState("");
@@ -143,6 +117,7 @@ function CreateNewOffice() {
 	}
 	const handleRemoveFields5 = (index) => {
 		const values = [...category_price];
+		
 		values.splice(index, 1);
 		setCategoryPrice(values);
 	}
@@ -323,34 +298,11 @@ function CreateNewOffice() {
 		})
 			.then((res) => {
 				console.log(res.data)
-
-			// setIsLoggedIn(true);
-			// setLoading(false);
 				window.location = "/ownersroom	";
 			})
 			.catch((err) => {
 				console.log(err.response.data);
 				window.location = "/createoffice";
-				if (err.response.data) {
-					// setErrorName(err.response.data.user?.name ? err.response.data.user.name : "");
-					// setErrorAddress(err.response.data.user?.address ? err.response.data.user.address : "");
-					// setErrorDescription(err.response.data.user?.description ? err.response.data.user.description : "");
-					// setErrorLatitude(err.response.data.user?.latitude ? err.response.data.user.latitude : "");
-					// setErrorLongitude(err.response.data.user?.longitude ? err.response.data.user.longitude : "");
-					// setErrorCapacity(err.response.data.user?.capacity ? err.response.data.user.capacity : "");
-					// setErrorLayout(err.response.data.user?.layout ? err.response.data.user.layout : "");
-					// setErrorRoomTypeName(err.response.data.user?.room_type_name ? err.response.data.user.room_type_name : "");
-					// setErrorRoomFunctionName(err.response.data.user?.room_function_name ? err.response.data.user.room_function_name : "");
-					// setErrorFilename(err.response.data.user?.filename ? err.response.data.user.filename : "");
-					// setErrorFacilityName(err.response.data.user?.facility_name ? err.response.data.user.facility_name : "");
-					// setErrorFacilityStatus(err.response.data.user?.facility_status ? err.response.data.user.facility_status : "");
-					// setErrorRegulationName(err.response.data.user?.regulation_name ? err.response.data.user.regulation_name : "");
-					// setErrorDay(err.response.data.user?.day ? err.response.data.user.day : "");
-					// setErrorOpenTimes(err.response.data.user?.open_times ? err.response.data.user.open_times : "");
-					// setErrorCloseTimes(err.response.data.user?.close_times ? err.response.data.user.close_times : "");
-					// setErrorCategoryPriceName(err.response.data.user?.category_price_name ? err.response.data.user.category_price_name : "");
-					// setErrorPrice(err.response.data.user?.price ? err.response.data.user.price : "");
-				}
 				setLoading(false);
 			});
 		};
@@ -811,23 +763,7 @@ function CreateNewOffice() {
 						<i class="fa fa-angle-up"></i>
 					</a>
 
-					{/* <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-								<button class="close" type="button" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">×</span>
-								</button>
-							</div>
-							<div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-							<div class="modal-footer">
-								<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-								<a class="btn btn-primary" href="login.html">Logout</a>
-							</div>
-							</div>
-						</div>
-					</div> */}
+				
 			</div>
 	);
 }

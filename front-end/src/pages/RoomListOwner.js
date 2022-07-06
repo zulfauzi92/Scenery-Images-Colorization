@@ -55,17 +55,20 @@ function RoomListOwner() {
                             <figure>
                                 <a href="#0" class="wish_bt liked"></a>
                                 <Link to={{
-                                        pathname: "/roomdetail",
+                                        pathname: "/ownerdetail",
                                         state: item.id // your data array of objects
                                     }}><img src={STORAGE_URL + item.filename} class="img-fluid" alt="" width="800" height="533"/></Link>
                                 <small>{item.name}</small>
                                 <div class="read_more"><Link to={{
-                                        pathname: "/roomdetail",
+                                        pathname: "/ownerdetail",
                                         state: item.id // your data array of objects
                                     }}><span>Read more</span></Link></div>
                             </figure>
                             <div class="wrapper">
-                                <h3><a href="tour-detail.html">{item.name}</a></h3>
+                                <h3><Link to={{
+                                        pathname: "/ownerdetail",
+                                        state: item.id // your data array of objects
+                                    }}>{item.name}</Link></h3>
                                 <p>{item.description}</p>
                                 {/* <span class="price">Start from <strong>$54</strong> /per hour</span> */}
                             </div>

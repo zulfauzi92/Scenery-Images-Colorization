@@ -13,7 +13,7 @@ import {
   } from "react-router-dom";
 import axios from 'axios';
 
-function RoomDetail() {    
+function OwnerDetail() {    
     const [room, setRoomDetail] = React.useState({detail_room: {}});
     const [room_type, setRoomType] = React.useState([]);
     const [facility, setFacility] = React.useState([]);
@@ -23,11 +23,6 @@ function RoomDetail() {
     const [isLoading, setIsLoading] = React.useState(true);
 
     const [category_price, setCategoryPrice] = React.useState([]);
-    const [booking_date, setBookingDate] = React.useState("");
-    const [quantity, setQuantity] = React.useState("");
-    const [start_time, setStartTime] = React.useState("");
-    const [price, setPrice] = React.useState("");
-    const [loading, setLoading] = React.useState(false);
     
     let location = useLocation();
     console.log(location.state);
@@ -66,42 +61,7 @@ function RoomDetail() {
         setIsLoading(false);
       };
 
-      const _onSubmit = () =>{
-        setLoading(true);
-        console.log(room.detail_room.id);
-        console.log(price);
-        console.log(booking_date);
-        console.log(start_time);
-        console.log(quantity);
-
-      axios
-        .post("http://localhost:8000/api/my-booking/user/create", {
-            room_id:room.detail_room.id,
-            category_price_id:price,
-            starting_date:booking_date,
-            starting_time:start_time,
-            quantity:quantity
-        }, {
-            headers: {
-                
-                Authorization: `Bearer ${JWT_HEADER}`
-            }
-        })
-        .then((res) => {
-            setLoading(false);
-            console.log(res.data)
-            if(res.data.status != "create is success"){
-                window.location = "/roomlist"
-            } else {
-                window.location = "/pendinglist"
-            }
-        })
-        .catch((err) =>{
-            setLoading(false)
-            console.log(err.response.data)
-           
-        })
-    };
+      
 
     return(
         
@@ -236,88 +196,7 @@ function RoomDetail() {
                             </div>
                         
                         
-                            <aside class="col-lg-4" id="sidebar">
-                                
-                                <form >
-
-                                    <div class="form-group input-dates">
-                                        <div class="header_box version_2">
-                                            <h2>Booking</h2>
-                                        </div>
-                                            <label>When..</label>
-                                            <input class="form-control"
-                                                type="date"  
-                                                value={booking_date} 
-                                                onChange={(e) => {
-                                                    setBookingDate(e.target.value);
-                                                }}
-
-                                            />
-                                        
-                                    </div>
-
-                                    <div class="form-group input-date">
-                                        <input 
-                                            class="form-control" 
-                                            type="number" 
-                                            placeholder="Quantity"
-                                            value={quantity} 
-                                            onChange={(e) => {
-                                                setQuantity(e.target.value);
-                                            }}
-                                        />
-
-                                    </div>
-
-                                    <div class="form-group input-dates">
-                                        <label>Starting Time</label>
-                                        <input 
-                                            class="form-control" 
-                                            type="time"  
-                                            placeholder="Starting Time"
-                                            value={start_time} 
-                                            onChange={(e) => {
-                                                setStartTime(e.target.value);
-                                            }}
-                                        />
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>Price</label>
-                                        <select 
-                                        class="form-control"
-                                        value={price}
-                                        onChange={(e) => {
-                                            setPrice(e.target.value);
-                                        }}>
-                                            <option>== Select Price ==</option>
-                                            {category_price.map(item => (
-                                                <option 
-                                                    value={item.id}
-                                                >
-                                                    {item.name} - {item.price}
-                                                
-                                                </option>
-                                            ))}   
-                                        </select>
-                                    </div>
-
-
-
-                                        
-                                    <button
-                                        className="btn_1 rounded full-width add_top_30"
-                                        variant="primary"
-                                        disabled={loading}
-                                        block
-                                        onClick={_onSubmit}>Purchase
-                                    </button>
-                                    <div class="text-center"><small>No money charged in this step</small></div>
-
-
-
-                                    </form>
-                            </aside>
+                            
 
                             
 
@@ -336,56 +215,12 @@ function RoomDetail() {
         </div>
         <div id="toTop"></div>
 
-        {/* <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
-            <div class="small-dialog-header">
-                <h3>Sign In</h3>
-            </div>
-            <form>
-                <div class="sign-in-wrapper">
-                    <a href="#0" class="social_bt facebook">Login with Facebook</a>
-                    <a href="#0" class="social_bt google">Login with Google</a>
-                    <div class="divider"><span>Or</span></div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" class="form-control" name="email" id="email"/>
-                        <i class="icon_mail_alt"></i>
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" class="form-control" name="password" id="password" value=""/>
-                        <i class="icon_lock_alt"></i>
-                    </div>
-                    <div class="clearfix add_bottom_15">
-                        <div class="checkboxes float-left">
-                            <label class="container_check">Remember me
-                                <input type="checkbox"/>
-                                <span class="checkmark"></span>
-                            </label>
-                        </div>
-                        <div class="float-right mt-1"><a id="forgot" href="javascript:void(0);">Forgot Password?</a></div>
-                    </div>
-                    <div class="text-center"><input type="submit" value="Log In" class="btn_1 full-width"/></div>
-                    <div class="text-center">
-                        Don’t have an account? <a href="register.html">Sign up</a>
-                    </div>
-                    <div id="forgot_pw">
-                        <div class="form-group">
-                            <label>Please confirm login email below</label>
-                            <input type="email" class="form-control" name="email_forgot" id="email_forgot"/>
-                            <i class="icon_mail_alt"></i>
-                        </div>
-                        <p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
-                        <div class="text-center"><input type="submit" value="Reset Password" class="btn_1"/></div>
-                    </div>
-                </div>
-            </form>
-            
-        </div> */}
+        
   
     </div>
 
     );
 }
                         
-export default RoomDetail;
+export default OwnerDetail;
             

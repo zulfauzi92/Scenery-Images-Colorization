@@ -22,6 +22,7 @@ import RoomListOwner from './pages/RoomListOwner';
 import Invoice from './pages/Invoice';
 import CobaDetail from './pages/CobaDetail';
 import Coba from './pages/Coba';
+import DetailOwner from './pages/OwnerDetail';
 
 function routes() {
     return (
@@ -38,6 +39,7 @@ function routes() {
                 <Route path='/pendinglist' component={PendingList}/>
                 <Route path='/approvedlist' component={ApprovedList}/>
                 <Route path='/declinedlist' component={DeclinedList}/>
+                <Route path='/ownerdetail' component={DetailOwner}/>
                 <Route path='/roomdetail' component={RoomDetail}/>
                 <Route path='/roomlist' component={RoomList}/>
                 <Route path='/login' component={Login}/>

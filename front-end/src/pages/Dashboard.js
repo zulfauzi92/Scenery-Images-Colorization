@@ -7,6 +7,11 @@ import Footer from '../components/Footer';
 
 function Dashboard() {
 
+    const _onSubmit = () =>{
+      
+      window.location = "/colorize"
+    };
+
     const [list, setRooms] = React.useState({rooms: []});
     const [isLoading, setIsLoading] = React.useState(true);
 
@@ -32,21 +37,30 @@ function Dashboard() {
     return(
         
     <div class="datepicker_mobile_full">
-        <Navbar currentPage='Dashboard'/>
+        {/* <Navbar currentPage='Dashboard'/> */}
         <div id="page">    
         
         <div>
             <section class="hero_single version_2">
                 <div class="wrapper">
                     <div class="container">
-                        <h3>Otak Kanan Office</h3>
-                        <p>Get Room Without Waste Your Time</p>
+                        <h3>Scenery Images Colorization</h3>
+                        <p>Colorize Your Scenery Image</p>
+                        <p><button
+                                        className="btn_1 rounded add_top_30"
+                                        variant="secondary"
+                                        // disabled={loading}
+                                        block
+                                        onClick={_onSubmit}
+                                        >Start Colorize
+                                    </button>
+                                    </p>
                     </div>
                 </div>
             </section>
             
     
-            <div class="container container-custom margin_80_0">
+            {/* <div class="container container-custom margin_80_0">
                 <div class="main_title_2">
                     <span><em></em></span>
                     <h2>Our Newest Rooms</h2>
@@ -73,10 +87,10 @@ function Dashboard() {
                     
                     <Link to="/roomlist"><strong>View all<i class="arrow_carrot-right"></i></strong></Link>
                 </section>
-            </div>            
+            </div>             */}
         </div>
         
-        <Footer />
+        {/* <Footer /> */}
         
         </div>
         

@@ -19,8 +19,9 @@ function Navbar() {
             {/* <div id="preloader"><div data-loader="circle-side"></div></div> */}
             <div id="logo">
             <Link to="/">
-                    <img src="assets/img/otakkananlogo.png" width="160" height="50" alt="" class="logo_normal"/>
-                    <img src="assets/img/otakkananlogo.png" width="160" height="50" alt="" class="logo_sticky"/> 
+                    {/* <img src="assets/img/logo_size.jpg" width="160" height="50" alt="" class="logo_normal"/> */}
+                    {/* <img src="assets/img/logo_size.jpg" width="160" height="50" alt="" class="logo_sticky"/>  */}
+                    
             </Link>
             </div>
         
@@ -34,10 +35,13 @@ function Navbar() {
             <nav id="menu" class="main-menu" >
                 <ul>
                     <li><span><Link to="/">Home</Link></span></li>
-                    <li><span><Link to="/roomlist">Room</Link></span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
+                    {/* <li><span><Link to="/roomlist">Room</Link></span></li>
                     <li><span><Link to="/about">About</Link></span></li>
                     <li><span><Link to="/login">Login</Link></span></li>
-                    <li><span><Link to="/register">Register</Link></span></li>
+                    <li><span><Link to="/register">Register</Link></span></li> */}
                     
                 </ul>
             </nav>

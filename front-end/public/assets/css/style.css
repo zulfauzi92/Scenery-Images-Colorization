@@ -1140,7 +1140,7 @@ header.sticky .hamburger-inner, header.sticky .hamburger-inner::before, header.s
   background-color: rgba(0, 0, 0, 0.6);
 }
 .hero_in.hotels:before {
-  background: url(../img/home_section_1.jpg) center center no-repeat;
+  background: url(../img/Adams_The_Tetons_and_the_Snake_River_naN9HI9.jpg) center center no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -2236,7 +2236,7 @@ video {
 
 @media (max-width: 1024px) {
   #hero_video {
-    background: #ccc url(../img/home_section_1.jpg);
+    background: #ccc url(../img/Adams_The_Tetons_and_the_Snake_River_naN9HI9.jpg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -2320,13 +2320,13 @@ video {
   }
 }
 .hero_single.short {
-  height: 600px;
+  height: 700px;
 }
 .hero_single.version_2 {
-  height: 620px;
+  height: 768px;
 }
 .hero_single.version_2:before {
-  background: url(../img/home_section_1.jpg) center center no-repeat;
+  background: url(../img/Adams_The_Tetons_and_the_Snake_River_naN9HI9.jpg) center center no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -4555,7 +4555,7 @@ ul.hotel_facilities li img {
 
 /*-------- 2.5 Login/register --------*/
 #login_bg, #register_bg {
-  background: url(../img/home_section_1.jpg) center center no-repeat fixed;
+  background: url(../img/Adams_The_Tetons_and_the_Snake_River_naN9HI9.jpg) center center no-repeat fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -4565,7 +4565,7 @@ ul.hotel_facilities li img {
 }
 
 #register_bg {
-  background: url(../img/home_section_1.jpg) center center no-repeat fixed;
+  background: url(../img/Adams_The_Tetons_and_the_Snake_River_naN9HI9.jpg) center center no-repeat fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -6365,7 +6365,7 @@ ul.list_feat li p {
   height: 690px;
 }
 .hero_single.version_3:before {
-  background: url(../img/home_section_3.jpg) center center no-repeat;
+  background: url(../img/Adams_The_Tetons_and_the_Snake_River_naN9HI9.jpg) center center no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

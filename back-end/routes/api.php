@@ -2,18 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RoomController;
-use App\Http\Controllers\RoomFunctionController;
-use App\Http\Controllers\RoomTypeController;
-use App\Http\Controllers\FacilityController;
+use App\Http\Controllers\ColoredController;
+use App\Http\Controllers\ColorlessController;
+use App\Http\Controllers\ColorizationController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\CommonRegulationsController;
-use App\Http\Controllers\FoodDrinksController;
-use App\Http\Controllers\GalleryController;
-use App\Http\Controllers\OperationalTimesController;
-use App\Http\Controllers\CategoryPriceController;
-use App\Http\Controllers\MyOfficeController;
-use App\Http\Controllers\MyBookingController;
 
 // // User Controller
 // Route::group(['middleware' => 'jwt.verify'], function(){
@@ -27,10 +19,18 @@ use App\Http\Controllers\MyBookingController;
 // Route::post('register', [UserController::class, 'register']);
 // Route::post('login', [UserController::class, 'login']);
 
-//Galery Controller
-Route::group(['prefix' => 'gallery',   ], function() {
-    Route::get('/read', [GalleryController::class, 'index']);
-    Route::post('/create', [GalleryController::class, 'store']);
+//Colorless Controller
+Route::group(['prefix' => 'colorless',   ], function() {
+    // Route::get('/read', [ColorlessController::class, 'index']);
+    Route::post('/create', [ColorlessController::class, 'store']);
+    // Route::post('/update/{id}', [GalleryController::class, 'update']);
+    // Route::delete('/delete/{id}', [GalleryController::class, 'destroy']);
+});
+
+//Colored Controller
+Route::group(['prefix' => 'colored',   ], function() {
+    // Route::get('/read', [ColorlessController::class, 'index']);
+    Route::post('/create', [ColoredController::class, 'store']);
     // Route::post('/update/{id}', [GalleryController::class, 'update']);
     // Route::delete('/delete/{id}', [GalleryController::class, 'destroy']);
 });

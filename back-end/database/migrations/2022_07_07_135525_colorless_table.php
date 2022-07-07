@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Galleries extends Migration
+class ColorlessTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class Galleries extends Migration
      */
     public function up()
     {
-        Schema::create('galleries', function (Blueprint $table) {
+        Schema::create('colorless', function (Blueprint $table) {
             $table->increments('id');
-            // $table->integer('user_id');
-            $table->string('filename', 255);
+            $table->string('colorless_link', 255);
             $table->timestamps();
             
         });

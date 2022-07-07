@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Relasi4 extends Migration
+class ColorizationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class Relasi4 extends Migration
      */
     public function up()
     {
-        // Schema::table('my_office', function (Blueprint $table) {
-        //     $table->integer('kos_id')->unsigned()->change();
-        //     $table->foreign('kos_id')->references('id')->on('kos')
-        //         ->onUpdate('cascade')->onDelete('cascade');
-
-           
-        // });
+        Schema::create('colorization', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('colorless_id');
+            $table->integer('colored_id');
+            $table->timestamps();
+            
+        });
     }
 
     /**

@@ -27,10 +27,10 @@ class ColoredController extends Controller
             ]);
 
             if($validator->fails()){
-                return response()->json(['status' => $validator->errors()->toJson()], 400);
+                $status =  $validator->errors()->toJson();
             }
 
-            $file = $request->file('filename');
+            $file = $request->file('colored_link');
             $filename = 'colored/' . 'up-' . time() . '.' . $file->getClientOriginalExtension();
             $file->storeAs('public/', $filename);
 

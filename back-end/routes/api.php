@@ -34,3 +34,11 @@ Route::group(['prefix' => 'colored',   ], function() {
     // Route::post('/update/{id}', [GalleryController::class, 'update']);
     // Route::delete('/delete/{id}', [GalleryController::class, 'destroy']);
 });
+
+//Colorization Controller
+Route::group(['prefix' => 'colorization',   ], function() {
+    Route::get('/result', [ColorizationController::class, 'index']);
+    Route::post('/create', [ColorizationController::class, 'store']);
+    // Route::post('/update/{id}', [GalleryController::class, 'update']);
+    // Route::delete('/delete/{id}', [GalleryController::class, 'destroy']);
+});

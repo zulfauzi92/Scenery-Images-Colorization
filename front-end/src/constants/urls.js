@@ -24,7 +24,7 @@ export const GET_HOME = () =>
     `${BASE_URL}/room/home`;
 
 export const GET_ROOMS = () => 
-    `${BASE_URL}/room/read`;
+    `${BASE_URL}/colorization/results`;
 
 export const GET_OFFICE_ROOMS = () => 
     `${BASE_URL}/my-office/read`;

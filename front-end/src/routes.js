@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 // import DashboardUser from './pages/DashboardUser';
 import Colorize from './pages/Colorize';
+import Results from './pages/Results';
 // import AboutUser from './pages/AboutUser';
 // import AboutOwner from './pages/AboutOwner';
 // import MyBooking from './pages/MyBooking';
@@ -30,6 +31,7 @@ function routes() {
             <Switch>
                 <Route path='/' exact component={Dashboard}/>
                 <Route path='/colorize' component={Colorize}/>
+                <Route path='/results' component={Results}/>
                 {/* <Route path='/invoice' exact component={Invoice}/>
                 <Route path='/user' exact component={DashboardUser}/>
                 <Route path='/roomlistuser' component={RoomListUser}/>

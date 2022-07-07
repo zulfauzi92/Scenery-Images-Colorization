@@ -84,7 +84,7 @@ def gray_to_color(image, inception, model, size):
 
 
 def get_filtered_image(image, action):
-    if action == '256':
+    if action == '256x256':
         pil_img1 = image.resize((256, 256))
 
         cv_img1 = np.array(pil_img1)
@@ -98,7 +98,7 @@ def get_filtered_image(image, action):
 
         # lab = cv2.cvtColor(image, cv2.COLOR_RGB2LAB)
         predict_image = gray_to_color(new_img, inception, model, 256)
-    elif action == '512':
+    elif action == '512x512':
         pil_img1 = image.resize((512, 512))
 
         cv_img1 = np.array(pil_img1)
@@ -112,7 +112,7 @@ def get_filtered_image(image, action):
 
         # lab = cv2.cvtColor(image, cv2.COLOR_RGB2LAB)
         predict_image = gray_to_color(new_img, inception, model, 512)
-    elif action == '768':
+    elif action == '768x768':
         pil_img1 = image.resize((768, 768))
 
         cv_img1 = np.array(pil_img1)

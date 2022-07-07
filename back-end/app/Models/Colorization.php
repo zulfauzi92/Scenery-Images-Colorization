@@ -11,7 +11,8 @@ class Colorization extends Model
     protected $table = 'colorization';
     protected $fillable = [
         'colorless_id',
-        'colored_id'
+        'colored_id',
+        'action'
     ];
     public $timestamps = true;
 }

@@ -17,6 +17,7 @@ class ColorizationTable extends Migration
             $table->increments('id');
             $table->integer('colorless_id');
             $table->integer('colored_id');
+            $table->string('action', 255);
             $table->timestamps();
             
         });

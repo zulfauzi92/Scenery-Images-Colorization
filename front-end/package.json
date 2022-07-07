@@ -16,6 +16,7 @@
     "react-bootstrap": "^1.5.2",
     "react-dom": "^17.0.1",
     "react-elastic-carousel": "^0.11.5",
+    "react-fullscreen-image": "0.0.3",
     "react-items-carousel": "^2.8.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",

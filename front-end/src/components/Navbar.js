@@ -35,9 +35,8 @@ function Navbar() {
             <nav id="menu" class="main-menu" >
                 <ul>
                     <li><span><Link to="/">Home</Link></span></li>
-                    <li><span></span></li>
-                    <li><span></span></li>
-                    <li><span></span></li>
+                    <li><span><Link to="/colorize">Colorize</Link></span></li>
+                    <li><span><Link to="/results">Results</Link></span></li>
                     {/* <li><span><Link to="/roomlist">Room</Link></span></li>
                     <li><span><Link to="/about">About</Link></span></li>
                     <li><span><Link to="/login">Login</Link></span></li>

@@ -45,7 +45,7 @@ function Colorize() {
 			url: "http://localhost:8000/api/gallery/create",
 			data: formData,
 			headers: { 
-				"Content-Type": "multipart/form-data",
+				"Content-Type": "application/json",
 				// Authorization: `Bearer ${JWT_HEADER}`
 		
 			},
@@ -56,8 +56,8 @@ function Colorize() {
             setLoading(true);
 			})
 		.catch((err) => {
-			// console.log(err.response.data);
-			window.location = "/colorize";
+			console.log(err.response);
+			// window.location = "/colorize";
 			setLoading(false);
 		});
 
@@ -66,7 +66,12 @@ function Colorize() {
 
     const _onColorize = () => {
 
-        var data = JSON.stringify({"img_url":filename});
+        var data = JSON.stringify(
+            {
+                "img_url":filename,
+                "action":action
+            }
+        );
 
         axios({
 			method: "post",
@@ -189,7 +194,7 @@ function Colorize() {
                     : ""} 
 						
                     <div class="box_general padding_bottom">
-                        {loading2 ? <center><img disabled={loading2} src={filename2}  width="512px" height="512"></img></center> : ""}
+                        {loading2 ? <center><img disabled={loading2} src={filename2} ></img></center> : ""}
                         
                     </div> 
                     

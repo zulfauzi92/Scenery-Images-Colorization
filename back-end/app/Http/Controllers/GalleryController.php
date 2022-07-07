@@ -44,7 +44,7 @@ class GalleryController extends Controller
         if($request->hasFile('filename')) {
             
             $validator = Validator::make($request->all(), [
-                'filename' => 'required|image|mimes:png,jpeg,jpg'
+                'filename' => 'required|image'
             ]);
 
             if($validator->fails()){

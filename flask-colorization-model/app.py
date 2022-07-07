@@ -134,7 +134,7 @@ def get_filtered_image(image, action):
 @cross_origin()
 def main():
     # print(len(output))
-    url = 'http://127.0.0.1:8000/api/gallery/create'
+    url = 'http://127.0.0.1:8000/api/colored/create'
 
     data = request.get_json()
 
@@ -153,7 +153,7 @@ def main():
     # image_png = buffer.getvalue()
     # open('geeks.png', 'rb')
 
-    files = {'filename': open('geeks.png', 'rb')}
+    files = {'colored_link': open('geeks.png', 'rb')}
 
     response = requests.post(url, files=files)
 

@@ -37,7 +37,7 @@ Route::group(['prefix' => 'colored',   ], function() {
 
 //Colorization Controller
 Route::group(['prefix' => 'colorization',   ], function() {
-    Route::get('/result', [ColorizationController::class, 'index']);
+    // Route::get('/result', [ColorizationController::class, 'index']);php 
     Route::post('/create', [ColorizationController::class, 'store']);
     // Route::post('/update/{id}', [GalleryController::class, 'update']);
     // Route::delete('/delete/{id}', [GalleryController::class, 'destroy']);

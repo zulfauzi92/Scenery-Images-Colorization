@@ -14,8 +14,8 @@ class ColorizationController extends Controller
 {
     public function store(Request $request){
         $validator = Validator::make($request->all(), [
-            'colorless_id' => 'required|integer',
-            'colored_id' => 'required|integer'
+            'colorless_id' => 'required',
+            'colored_id' => 'required'
         ]);
 
         if($validator->fails()){

@@ -36,13 +36,13 @@ function Colorize() {
 
 		var formData = new FormData();
         
-		formData.append('filename', layout.file);
+		formData.append('colorless_link', layout.file);
 
 		// console.log(formData);
 
 		axios({
 			method: "post",
-			url: "http://localhost:8000/api/gallery/create",
+			url: "http://localhost:8000/api/colorless/create",
 			data: formData,
 			headers: { 
 				"Content-Type": "application/json",
@@ -51,8 +51,8 @@ function Colorize() {
 			},
 		})
 		.then((res) => {
-            setFilename("http://127.0.0.1:8000/storage/"+ res.data.gallery.filename)
-            setImageID(res.data.gallery.id)
+            setFilename("http://127.0.0.1:8000/storage/"+ res.data.colorless.colorless_link)
+            setImageID(res.data.colorless.id)
             setLoading(true);
 			})
 		.catch((err) => {
@@ -85,8 +85,31 @@ function Colorize() {
 		})
 		.then((res) => {
             console.log(res.data)
-            setFilename2("http://127.0.0.1:8000/storage/"+ res.data.gallery.filename)
-            setImageID2(res.data.gallery.id)
+            setFilename2("http://127.0.0.1:8000/storage/"+ res.data.colored.colored_link)
+            setImageID2(res.data.colored.id)
+			var formData2 = new FormData();
+        
+			formData2.append('colorless_id', imageID);
+			formData2.append('colored_id', res.data.colored.id);
+			axios({
+				method: "post",
+				url: "http://localhost:8000/api/colorization/create",
+				data:formData2,
+				headers: { 
+					'Content-Type':'application/json',
+					// Authorization: `Bearer ${JWT_HEADER}`
+			
+				},
+			})
+			.then((res) => {
+				console.log(res.data)
+	
+				setLoading2(true);
+			})
+			.catch((err) => {
+				console.log(err.response);
+			});
+
             setLoading2(true);
 		})
 		.catch((err) => {

@@ -207,9 +207,12 @@ function Colorize() {
 											
 										>
 											<option value="">=== Select Your Resolution ===</option>
-											<option value="256x256">256x256</option>
-											<option value="512x512">512x512</option>
-											<option value="768x768">768x768</option>		
+											{/* <option value="model1">Model1-64 super resolusi = 256</option> */}
+											<option value="model1">Model1-256 super resolusi = 512</option>
+											
+											<option value="model3">Model2-wajah-256 super resolusi 512</option>
+											
+											
 														
 										</select>
 													
@@ -233,7 +236,7 @@ function Colorize() {
 						: ""} 
 							
 						<div class="box_general padding_bottom">
-							{loading2 ? <center><img disabled={loading2} src={filename2} ></img></center> : ""}
+							{loading2 ? <center><img  disabled={loading2} src={filename2} ></img></center> : ""}
 							
 						</div> 
 						
